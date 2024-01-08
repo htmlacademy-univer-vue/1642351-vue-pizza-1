@@ -1,12 +1,12 @@
 <template>
     <header class="header">
-    <div class="header__logo" v-on:click="moveToHome">
-      <a href="index.html" class="logo">
+    <div class="header__logo">
+      <a href="#" class="logo"  v-on:click="moveToHome">
         <img src="src/assets/img/logo.svg" alt="V!U!E! Pizza logo" width="90" height="40">
       </a>
     </div>
     <div class="header__cart">
-      <a href="cart.html">{{ cartValue }} ₽</a>
+      <a href="#" v-on:click="moveToCart">{{ cartValue }} ₽</a>
     </div>
     <div class="header__user">
       <a class="header__login" v-if="!isAuf" v-on:click="login" ><span >Войти</span></a>
@@ -69,6 +69,9 @@ export default {
         },
         moveToProfile(){
             router.push('/profile')
+        },
+        moveToCart(){
+            router.push('/cart')
         }
     }
 }

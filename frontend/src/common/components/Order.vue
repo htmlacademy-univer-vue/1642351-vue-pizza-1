@@ -25,7 +25,7 @@
             <OrderAdditional v-for="misc of order.orderMisc" :misc="misc"/>
         </ul>
 
-        <p class="order__address">Адрес доставки: ул.{{order.orderAddress.street}} д.{{order.orderAddress.building}} кв.{{order.orderAddress.flat}} </p>
+        <p class="order__address">Адрес доставки: ул.{{order.orderAddress?.street}} д.{{order.orderAddress?.building}} кв.{{order.orderAddress?.flat}} </p>
       </section>
 </template>
 
