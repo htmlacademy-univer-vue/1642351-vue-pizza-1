@@ -21,12 +21,12 @@ const router = createRouter({
     {
       path: "/orders",
       name: "orders",
-      component: () => import("../views/HomeView.vue"),
+      component: () => import("../views/OrdersView.vue"),
     },
     {
       path: "/profile",
       name: "profile",
-      component: () => import("../views/HomeView.vue"),
+      component: () => import("../views/ProfileView.vue"),
     },
   ],
 });
