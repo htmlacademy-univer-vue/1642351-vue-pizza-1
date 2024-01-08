@@ -60,7 +60,6 @@ export default {
             router.push('/login')
         },
         logout(){
-            // console.log(this.whoAmI)
             store.auth = ''
             this.isAuf = false
             router.push('/')

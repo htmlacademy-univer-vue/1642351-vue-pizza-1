@@ -6,6 +6,7 @@ export const useBackendDataStore = defineStore("backendData", {
     sauces: {},
     sizes: {},
     dough: {},
+    misc: [],
   }),
   getters: {},
   actions: {
@@ -35,6 +36,15 @@ export const useBackendDataStore = defineStore("backendData", {
         })
         .then((el) => {
           this.dough = el;
+        });
+    },
+    getMisc() {
+      return fetch("api/misc")
+        .then((res) => {
+          return res.json();
+        })
+        .then((el) => {
+          this.misc = el;
         });
     },
   },

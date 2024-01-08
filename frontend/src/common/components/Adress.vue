@@ -73,7 +73,6 @@ export default {
             auth: ''        
         }
     },
-
     emits: ["updateAdress"],
     props:{
         data :{

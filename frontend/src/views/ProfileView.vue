@@ -2,11 +2,11 @@
   <Header />
   <main class="layout">
     <div class="layout__sidebar sidebar">
-      <a href="index.html" class="logo layout__logo">
+      <a href="#" class="logo layout__logo" v-on:click="moveToHome">
         <img src="src/assets/img/logo.svg" alt="V!U!E! Pizza logo" width="90" height="40">
       </a>
 
-      <a class="layout__link" href="#">История заказов</a>
+      <a class="layout__link" href="#" v-on:click="moveToOrders">История заказов</a>
       <a class="layout__link layout__link--active" href="#">Мои данные</a>
     </div>
 
@@ -25,9 +25,7 @@
         </div>
         <p class="user__phone">Контактный телефон: <span>{{ whoAmI.phone }}</span></p>
       </div>
-
       <Adress v-for="address of adressess" :data="address" :userId="whoAmI.id" @updateAdress="updateAdresses"/>
-
      <AddAdress v-if="isAddAdress" :userId="whoAmI.id" @updateAdress="updateAdresses"/>
       <div class="layout__button">
         <button type="button" class="button button--border" v-on:click="toggleAddForm">Добавить новый адрес</button>
@@ -85,6 +83,12 @@ export default {
         }).then((el)=>el.json()).then((el)=>{
           this.adressess = el
         })
+      },
+      moveToOrders(){
+        router.push('/orders')
+      },
+      moveToHome(){
+        router.push('/')
       }
    }
 }
