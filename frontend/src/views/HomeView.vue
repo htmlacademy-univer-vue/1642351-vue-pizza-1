@@ -195,6 +195,7 @@ export default {
     await store.getSauces()
     await store.getSizes()
     await store.getDough()
+    await store.getMisc()
     this.ingredientss = store.ingridients
   },
   

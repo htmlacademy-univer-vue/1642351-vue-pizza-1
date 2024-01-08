@@ -9,8 +9,8 @@
       <a href="cart.html">{{ cartValue }} ₽</a>
     </div>
     <div class="header__user">
-      <a href="#" class="header__login" v-on:click="login" v-if="!isAuf"><span>Войти</span></a>
-      <a href="user-data.html" v-if="isAuf">
+      <a class="header__login" v-if="!isAuf" v-on:click="login" ><span >Войти</span></a>
+      <a href="#" v-if="isAuf" v-on:click="moveToProfile">
         <picture>
           <source type="image/webp" :srcset="'/api'+whoAmI.avatar">
           <img :src="'/api'+whoAmI.avatar" :srcset="'/api'+whoAmI.avatar" :alt="whoAmI.name" width="32" height="32">
@@ -60,12 +60,15 @@ export default {
             router.push('/login')
         },
         logout(){
-            // console.log(this.whoAmI)
             store.auth = ''
             this.isAuf = false
+            router.push('/')
         },
         moveToHome(){
             router.push('/')
+        },
+        moveToProfile(){
+            router.push('/profile')
         }
     }
 }
