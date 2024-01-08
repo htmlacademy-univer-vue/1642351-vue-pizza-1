@@ -1,5 +1,6 @@
 <template>
-  <form action="test.html" method="post" class="layout-form">
+  <Header />
+  <form action="#" method="post" class="layout-form">
     <main class="content cart">
       <div class="container">
         <div class="cart__title">
@@ -208,3 +209,24 @@
   </form>
 
 </template>
+
+<script>
+
+import Header from '../common/components/Header.vue'
+
+export default {
+  components:{
+    Header,
+  },
+}
+</script>
+
+<style>
+#app{
+  height: 100vh;
+}
+.layout-form{
+  height: calc(100% - 61px);
+}
+
+</style>
